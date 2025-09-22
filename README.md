@@ -3,7 +3,7 @@
 SavorySearch is a modern recipe discovery app that helps you **find, save, and cook recipes** tailored to your taste.  
 It supports **meal planning, favorites, dark mode, multi-language support, and nutrition insights**, all in a clean responsive UI.
 
-🔗 **Live Demo:** [https://your-vercel-url.vercel.app](https://your-vercel-url.vercel.app)
+🔗 **Live Demo:** 
 
 ---
 
