@@ -3,7 +3,7 @@
 SavorySearch is a modern recipe discovery app that helps you **find, save, and cook recipes** tailored to your taste.  
 It supports **meal planning, favorites, dark mode, multi-language support, and nutrition insights**, all in a clean responsive UI.
 
-🔗 **Live Demo:** 
+🔗 **Live Demo:*(https://savory-search.vercel.app/)* 
 
 ---
 
@@ -24,7 +24,7 @@ It supports **meal planning, favorites, dark mode, multi-language support, and n
 - **Frontend:** HTML, CSS (modern gradients, responsive grid), Vanilla JS
 - **Backend Proxy:** Vercel Serverless Function (`/api/recipes`)
 - **API:** [Spoonacular Recipe API](https://spoonacular.com/food-api)
-- **Deployment:** [Vercel]((https://vercel.com/home))
+- **Deployment:** [Vercel](https://vercel.com/home)
 
 ---
 
