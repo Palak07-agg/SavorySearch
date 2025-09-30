@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SavorySearch - Smart Recipe Finder</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- jsPDF -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+  <!-- Hero Section -->
+  <header class="hero">
+    <nav class="navbar">
+      <h1 class="brand">SavorySearch</h1>
+      <div class="nav-actions">
+        <select id="langSel" class="rounded-btn">
+          <option value="en">English</option>
+          <option value="hi">हिंदी</option>
+        </select>
+        <button id="themeBtn" class="rounded-btn">🌙</button>
+        <button id="openFav" class="rounded-btn">⭐</button>
+      </div>
+    </nav>
+    <div class="hero-content">
+      <h2>Never wonder what to cook!</h2>
+      <p>From your fridge to your plate — discover recipes effortlessly.</p>
+      <div class="search-bar">
+        <input id="mainSearch" type="text" placeholder="Search recipes for your craving..."/>
+        <select id="searchType">
+          <option value="ingredients">By Ingredients</option>
+          <option value="name">By Name</option>
+        </select>
+        <button id="searchBtn">🔍</button>
+      </div>
+      <p class="suggestion">Suggested: pasta, chicken, pizza, cake, cookies & more</p>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main-container">
+    <!-- Results -->
+    <section class="card-section">
+      <h3 id="resultsTitle">Results</h3>
+      <p id="resultCount"></p>
+      <p id="noResults" class="hidden">No recipes found. Try different ingredients.</p>
+      <div id="recipeContainer" class="recipe-grid"></div>
+    </section>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <!-- Favorites -->
+      <div class="card">
+        <h3 id="favTitle">Favorites <span id="favCount">0</span></h3>
+        <div id="favList"></div>
+      </div>
+      <!-- Nutrition -->
+      <div class="card">
+        <h3 id="nutritionTitle">Nutrition</h3>
+        <p id="nutriNote">Open a recipe to view nutrition</p>
+        <canvas id="nutriChart"></canvas>
+      </div>
+    </aside>
+  </main>
+
+  <!-- Meal Planner -->
+  <section class="card-section">
+    <h3 id="plannerTitle">Meal Planner</h3>
+    <div class="planner-actions">
+      <button id="exportPdf" class="rounded-btn">Export PDF</button>
+      <button id="clearPlanner" class="rounded-btn">Clear</button>
+    </div>
+    <div class="planner-grid">
+      <div class="day" data-day="Mon"><h4>Mon</h4><div class="drop-hint">Drop here</div></div>
+      <div class="day" data-day="Tue"><h4>Tue</h4><div class="drop-hint">Drop here</div></div>
+      <div class="day" data-day="Wed"><h4>Wed</h4><div class="drop-hint">Drop here</div></div>
+      <div class="day" data-day="Thu"><h4>Thu</h4><div class="drop-hint">Drop here</div></div>
+      <div class="day" data-day="Fri"><h4>Fri</h4><div class="drop-hint">Drop here</div></div>
+      <div class="day" data-day="Sat"><h4>Sat</h4><div class="drop-hint">Drop here</div></div>
+      <div class="day" data-day="Sun"><h4>Sun</h4><div class="drop-hint">Drop here</div></div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>🍴 SavorySearch helps you turn ingredients into delicious meals with nutrition insights and weekly meal planning — all in one place.</p>
+  </footer>
+
+  <!-- Overlay Modal -->
+  <div id="overlay" class="overlay">
+    <div class="modal">
+      <button id="closeDetail" class="close-btn">✖</button>
+      <img id="detailImg" src="" alt="Recipe" class="modal-img"/>
+      <h2 id="detailTitle"></h2>
+      <p id="detailMeta"></p>
+      <h3>Ingredients</h3>
+      <ul id="detailIngredients"></ul>
+      <h3>Steps</h3>
+      <div id="detailSteps"></div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

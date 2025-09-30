@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+/* Global */
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  background: white;
+  color: #333;
+}
+h1.brand {
+   font-family: 'Great Vibes', cursive;
+  font-size: 2.5rem;
+  font-weight: 400;       /* cursive fonts don’t need bold */
+  color: #E63946;         /* elegant red */
+  letter-spacing: 1px;
+padding: 5px 0px;
+}
+.hidden { display: none; }
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 0px;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 2;
+}
+.nav-actions { display: flex; gap: 10px; }
+
+/* Hero */
+.hero {
+  background: url("sand.jpg") center/cover no-repeat;
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  position: relative;
+}
+.hero::after {
+  content: "";
+  position: absolute; inset: 0;
+  background: rgba(0,0,0,0.5);
+}
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+.hero h2 { font-size: 40px; margin: 0; }
+.hero p { font-size: 18px; }
+
+/* Search Bar */
+.search-bar {
+  margin: 20px auto;
+  display: flex;
+  justify-content: center;
+  max-width: 600px;
+  background: white;
+  border-radius: 40px;
+  overflow: hidden;
+}
+.search-bar input, .search-bar select, .search-bar button {
+  border: none;
+  padding: 12px;
+  outline: none;
+}
+.search-bar input { flex: 1; }
+.search-bar button {
+  background: linear-gradient(135deg, #ff6a6a, #ff8a00);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+.suggestion { font-size: 14px; opacity: 0.8; }
+
+/* Main */
+.main-container {
+  display: flex;
+  gap: 20px;
+  padding: 30px;
+  align-items: flex-start;
+}
+.card-section {
+  flex: 3;
+  background:#E7EAEA;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.sidebar {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.card {
+  background: #E7EAEA;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Recipe Cards */
+.recipe-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(220px,1fr));
+  gap: 20px;
+}
+.recipe-card {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.recipe-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+.recipe-img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+/* Planner */
+.planner-actions { margin: 10px 0; }
+.planner-grid {
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(70px,1fr));
+  gap: 10px;
+
+}
+.day {
+  background: #FBFCFA;
+  border-radius: 12px;
+  padding: 10px;
+  min-height: 100px;
+}
+
+/* Buttons */
+button, select {
+  border-radius: 40px;
+  cursor: pointer;
+}
+.rounded-btn {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 40px;
+  background: linear-gradient(135deg, #ff6a6a, #ff8a00);
+  color: white;
+  font-weight: 600;
+  transition: transform 0.2s;
+}
+.rounded-btn:hover { transform: scale(1.05); }
+
+/* Modal */
+.overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  z-index: 1000;
+}
+.overlay.show { display: flex; justify-content: center; align-items: center; }
+.modal {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  max-width: 700px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+.modal-img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  float: right;
+  cursor: pointer;
+}
+
+/* Footer */
+footer {
+  background: #222;
+  color: #eee;
+  text-align: center;
+  padding: 20px;
+  margin-top: 30px;
+  
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .main-container { flex-direction: column; }
+  .hero h2 { font-size: 28px; }
+}
+/* prevent horizontal scroll */
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+/* dark theme */
+[data-theme="dark"] {
+  background: #121212;
+  color: #eee;
+}
+[data-theme="dark"] .card,
+[data-theme="dark"] .card-section,
+[data-theme="dark"] .day {
+  background: #1f1f1f;
+  color: #eee;
+}
+[data-theme="dark"] .search-bar {
+  background: #333;
+}
+
