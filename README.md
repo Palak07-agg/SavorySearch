@@ -24,7 +24,7 @@ It supports **meal planning, favorites, dark mode, multi-language support, and n
 - **Frontend:** HTML, CSS (modern gradients, responsive grid), Vanilla JS
 - **Backend Proxy:** Vercel Serverless Function (`/api/recipes`)
 - **API:** [Spoonacular Recipe API](https://spoonacular.com/food-api)
-- **Deployment:** [Vercel](https://vercel.com)
+- **Deployment:** [Vercel]((https://savory-search.vercel.app/))
 
 ---
 
